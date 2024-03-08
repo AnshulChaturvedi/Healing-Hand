@@ -1,19 +1,28 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./components/navbar"; 
+import ConsultDoctor from "./pages/consultdoctor"; 
+import Healthcare from "./pages/healthcare"; 
+import Labtest from "./pages/labtest"; 
+import Login from "./pages/login";
+import Medicines from "./pages/medicines"; 
+import Register from "./pages/register"; 
+import Wellness from "./pages/wellness"; 
+import Homepage from "./pages/homepage"; 
 
-import Login from'./pages/Login.js'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
 function App() {
-  
   return (
-    <BrowserRouter>
-     <Routes>
-      <Route path='/login' element={<Login />}></Route>
-      <Route path='/signin' element={<Signin />}></Route>
-     </Routes>
-    </BrowserRouter>
-     
+    <Router>
+      <Navbar /> 
+      <Switch>
+        <Route path='/' exact component={Homepage} />
+        <Route path='/consultdoctor' component={ConsultDoctor} />
+        <Route path='/healthcare' component={Healthcare} />
+        <Route path='/labtest' component={Labtest} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
+        <Route path='/medicines' component={Medicines} />
+        <Route path='/wellness' component={Wellness} />
+      </Switch>
+    </Router>
   );
 }
-
-export default App;
