@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
     return (
@@ -34,9 +35,8 @@ export default function Login() {
                     </div>
                     <button type="submit">Login</button>
                     <p>Sign in to your account</p>
-                    <button>Register New Account</button>
+                    <Link to="/register">register new account</Link>
                 </form>
-                
             </div>
         </div>
     );
