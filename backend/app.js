@@ -33,7 +33,10 @@ app.use(errorHandler);
 
 
 //routes
-
+const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
+app.use("/api",authRoutes);
+app.use("/api",userRoutes);
 
 //server started
 app.listen(PORT, () => {
