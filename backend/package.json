@@ -4,7 +4,7 @@
   "description": "healing hand",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "author": "team angular",
   "license": "ISC",
