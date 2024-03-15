@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Register() {
     return (
@@ -51,9 +51,11 @@ export default function Register() {
               id="password"
           />
       </div>
-        {location.pathname === '/register' && (
+        {/* {location.pathname === '/register' && (
           <button type="submit" className="w-full bg-blue-500 hover:bg-blue-800 hover:text-black transition-all duration-200 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Register</button>
-        )}
+        )} */}/
+         <button type="submit" className="w-full bg-blue-500 hover:bg-blue-800 hover:text-black transition-all duration-200 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Register</button>
+
     </form>
   </div>
 

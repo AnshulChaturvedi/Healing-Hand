@@ -28,7 +28,7 @@ const DoctorDirectory = () => {
                     <h2>Title of Image</h2>
                     <img
                         src={introimg} // Replace with your image URL
-                        alt="Sample Image"
+                        alt="Sample docter img"
                         className="w-full h-[500px] rounded-lg shadow-md"
                     />
                 </div>
