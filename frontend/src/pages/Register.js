@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { navigate } from "react-router-dom"; // Import navigate from react-router-dom
+import { useNavigate } from 'react-router-dom'; // Import navigate from react-router-dom
 import Validation from "./Loginvalidation";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     usertype: '',
     firstname: '',
