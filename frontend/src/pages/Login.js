@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios"; // Import axios
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Validation from "./Loginvalidation";
 
 export default function Login() {
@@ -12,7 +12,15 @@ export default function Login() {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
-    useEffect(() => {
+    const handleInput = (event) => {
+        setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setErrors(Validation(values));
+
+        // Make POST request if there are no errors
         if (Object.keys(errors).length === 0 && errors.constructor === Object) {
             axios.post('http://localhost:3000/api/login', values)
                 .then(res => {
@@ -24,18 +32,10 @@ export default function Login() {
                 })
                 .catch(err => console.log(err))
         }
-    }, [errors]);
-
-    const handleInput = (event) => {
-        setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setErrors(Validation(values));
-    };
     const handleRegisterClick = () => {
-        history.push('/register'); // Navigate to /register when the button is clicked
+        navigate('/register');
     };
 
     return (

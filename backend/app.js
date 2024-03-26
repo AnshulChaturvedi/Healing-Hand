@@ -5,13 +5,13 @@ const bodyParser = require("body-parser");
 var cors = require('cors');
 
 require("dotenv").config();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 const cookieParser = require("cookie-parser");
-const errorHandler = require("./middleware/error");
+const errorHandler = require("./middleware/error").default;
 
 //database connection
-const connectDB = require("./config/database");
+const connectDB = require("./config/database").default;
 connectDB();
 
 //middleware
@@ -26,15 +26,15 @@ app.use(
 
 app.use(cookieParser());
 app.use(cors());
-
+app.use(express.json());
 
 // error middleware
 app.use(errorHandler);
 
 
 //routes
-const authRoutes = require("./routes/authRoutes");
-const userRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/authRoutes").default;
+const userRoutes = require("./routes/userRoutes").default;
 app.use("/api",authRoutes);
 app.use("/api",userRoutes);
 
