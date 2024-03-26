@@ -1,7 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const { allUsers, singleUser, editUser, deleteUser} = require('../controllers/userController');
-const { isAuthenticated, isAdmin } = require('../middleware/auth');
+import { Router } from 'express';
+const router = Router();
+import { allUsers, singleUser, editUser, deleteUser } from '../controllers/userController';
+import { isAuthenticated, isAdmin } from '../middleware/auth';
 
 
 //user routes
@@ -11,4 +11,4 @@ router.get('/user/:id', isAuthenticated, singleUser);
 router.put('/user/edit/:id', isAuthenticated, editUser);
 router.delete('/admin/user/delete/:id', isAuthenticated, isAdmin, deleteUser);
 
-module.exports = router;
+export default router;

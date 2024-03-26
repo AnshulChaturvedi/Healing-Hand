@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+import { connect } from "mongoose";
 
 //database connection
 require("dotenv").config();
 
 const connectDB = () => {
-    mongoose.connect(process.env.DATABASE, {
+    connect(process.env.DATABASE, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
@@ -13,4 +13,4 @@ const connectDB = () => {
     .catch((err) => console.log(err));
 }
 
-module.exports = connectDB;
+export default connectDB;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const consultdoctor = () => {
+const ConsultDoctor = () => {
   const [selectedTime, setSelectedTime] = useState('09:00 AM');
   const [email, setEmail] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
@@ -79,4 +79,4 @@ const consultdoctor = () => {
   );
 }
 
-export default consultdoctor;
+export default ConsultDoctor;

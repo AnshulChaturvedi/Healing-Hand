@@ -1,7 +1,7 @@
 // LoginValidation.js
 
 // Define your validation function here
-const Validation = (values) => {
+function Validation(values) {
     let errors = {};
 
     // Check if email is empty
@@ -26,6 +26,6 @@ const Validation = (values) => {
         errors.usertype = "Please select only one user type";
     }
     return errors;
-};
+}
 
 export default Validation;
